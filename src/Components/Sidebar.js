@@ -14,6 +14,9 @@ import ExpandMoreIcon from '@material-ui/icons/ExpandMore';
 import AddIcon from '@material-ui/icons/Add';
 import SidebarOption from './SidebarOption';
 import db from '../Firebaase/firebase';
+
+
+
 function Sidebar() {
     const [channels, setChannels] = useState([]);
 
@@ -48,7 +51,7 @@ function Sidebar() {
             <hr />
             <SidebarOption Icon={ExpandMoreIcon} title="Channels" />
             <hr />
-            <SidebarOption Icon={AddIcon} title="Add Channel" />
+            <SidebarOption Icon={AddIcon} title="Add Channel" addChannelOption/>
             {channels != null && channels.map((channel) => (
                 <SidebarOption title={channel.name} id={channel.id} />
             ))}
